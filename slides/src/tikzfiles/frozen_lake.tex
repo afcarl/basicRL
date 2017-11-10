@@ -1,0 +1,68 @@
+\begin{figure}[ht!]
+\centering
+\scalebox{0.75}{
+\begin{tikzpicture}
+
+
+% 4x4 grid 
+\draw[opacity=0.4] (0,0) rectangle (4,4);
+\draw[draw=black,thick] (0,0) grid (4,4);
+\node (00) at (0.5,3.5) {\Large 0};
+\node (01) at (1.5,3.5) {\Large 0};
+\node (02) at (2.5,3.5) {\Large 0};
+\node (03) at (3.5,3.5) {\Large 0};
+\node (10) at (0.5,2.5) {\Large 0};
+\node[red!120] (11) at (1.5,2.5) {\Large 0};
+\node (12) at (2.5,2.5) {\Large 0};
+\node[red!120] (13) at (3.5,2.5) {\Large 0};
+\node (20) at (0.5,1.5) {\Large 0};
+\node (21) at (1.5,1.5) {\Large 0};
+\node (22) at (2.5,1.5) {\Large 0};
+\node[red!120] (23) at (3.5,1.5) {\Large 0};
+\node[red!120] (30) at (0.5,0.5) {\Large 0};
+\node (31) at (1.5,0.5) {\Large 0};
+\node (32) at (2.5,0.5) {\Large 0};
+\node (33) at (3.5,0.5) {\Large 1};
+
+
+\node[textonly, left=60pt of 00] (inv1) {};
+\node[textonly, left=2pt of 00] (inv2) {};
+
+\node[boxtextonly] at (1.8,-1.2) (label1) {states and\\rewards};
+
+
+\node[textonly, below=60pt of 33] (inv13) {};
+\node[textonly, below=2pt of 33] (inv14) {};
+
+\path[tedge, nephritis!60, line width=1mm] (inv1) edge node[above right] {start} (inv2);
+
+\path[tedge, nephritis!60, line width=1mm] (inv13) edge node[below right] {goal} (inv14);
+
+% actions 
+\node[textonly, right=60pt of 23] (inv3) {};
+\node[textonly, right=30pt of inv3] (inv4) {2};
+\node[textonly, left=30pt of inv3] (inv5) {0};
+\node[textonly, above=30pt of inv3] (inv6) {3};
+\node[textonly, below=30pt of inv3] (inv7) {1};
+\node[textonly, right=75pt of label1] (label2) {actions};
+\path[tedge, orange!120, line width=1mm] (inv3) -- (inv4);
+\path[tedge, orange!120, line width=1mm] (inv3) -- (inv5);
+\path[tedge, orange!120, line width=1mm] (inv3) -- (inv6);
+\path[tedge, orange!120, line width=1mm] (inv3) -- (inv7);
+
+
+
+
+% stochasticity
+\node[textonly, right=120pt of inv3] (inv8) {};
+\node[textonly, right=30pt of inv8] (inv9) {$0.333$};
+\node[textonly, left=30pt of inv8] (inv10) {$0.333$};
+\node[textonly, below=30pt of inv8] (inv11) {$0.333$};
+\node[boxtextonly, right=85pt of label2] (label3) {choosing \\ action \\ 1};
+\path[tedge, orange!120, line width=1mm] (inv8) -- (inv9);
+\path[tedge, orange!120, line width=1mm] (inv8) -- (inv10);
+\path[tedge, orange!120, line width=1mm] (inv8) -- (inv11);
+
+ \end{tikzpicture}
+} % scalebox
+\end{figure}
