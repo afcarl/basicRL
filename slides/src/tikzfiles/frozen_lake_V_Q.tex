@@ -1,0 +1,55 @@
+\begin{figure}[ht!]
+\centering
+\scalebox{0.75}{
+\begin{tikzpicture}
+
+
+% 4x4 grid 
+\draw[opacity=0.4] (0,0) rectangle (4,4);
+\draw[draw=black,thick] (0,0) grid (4,4);
+\node (00) at (0.5,3.5) {\Large 0};
+\node (01) at (1.5,3.5) {\Large 1};
+\node (02) at (2.5,3.5) {\Large 2};
+\node (03) at (3.5,3.5) {\Large 3};
+\node (10) at (0.5,2.5) {\Large 4};
+\node (11) at (1.5,2.5) {\Large 5};
+\node (12) at (2.5,2.5) {\Large 6};
+\node (13) at (3.5,2.5) {\Large 7};
+\node (20) at (0.5,1.5) {\Large 8};
+\node (21) at (1.5,1.5) {\Large 9};
+\node (22) at (2.5,1.5) {\Large 10};
+\node (23) at (3.5,1.5) {\Large 11};
+\node (30) at (0.5,0.5) {\Large 12};
+\node (31) at (1.5,0.5) {\Large 13};
+\node (32) at (2.5,0.5) {\Large 14};
+\node (33) at (3.5,0.5) {\Large 15};
+
+
+\node[textonly, left=60pt of 00] (inv1) {};
+\node[textonly, left=2pt of 00] (inv2) {};
+
+\node[boxtextonly] at (1.8,-1.5) (label1) {All states as a matrix};
+
+
+\node[textonly, below=60pt of 33] (inv13) {};
+\node[textonly, below=2pt of 33] (inv14) {};
+
+% Q-table
+\node[textonly, right=60pt of 23] (inv8) {$\begin{bmatrix}
+Q(0,0) & Q(0,1) & Q(0,2) & Q(0,3)\\
+Q(1,0) & Q(1,1) & Q(1,2) & Q(1,3)\\
+Q(2,0) & Q(2,1) & Q(2,2) & Q(2,3)\\
+Q(3,0) & Q(3,1) & Q(3,2) & Q(3,3)\\
+Q(4,0) & Q(4,1) & Q(4,2) & Q(4,3)\\
+\vdots & \vdots & \vdots & \vdots\\
+Q(15,0) & Q(15,1) & Q(15,2) & Q(15,3)\\
+\end{bmatrix}$};
+
+\node[textonly, below right=1pt and -85pt of inv8] (inv9) {states $\times$ actions};
+
+\node[textonly, right=155pt of label1] (label2) {Q table};
+
+
+ \end{tikzpicture}
+} % scalebox
+\end{figure}
